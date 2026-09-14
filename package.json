@@ -1,0 +1,27 @@
+{
+  "name": "devhub-404-ai",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node -r ts-node/register index.ts",
+    "dev": "ts-node index.ts",
+    "register:commands": "ts-node scripts/register-commands.ts",
+    "deploy": "npx wrangler deploy",
+    "build": "tsc",
+    "test": "pnpm build && node --test dist/tests/application-lifecycle.test.js dist/tests/module-registry.test.js dist/tests/event-registry.test.js dist/tests/interaction-registry.test.js dist/tests/ai-message-response.test.js dist/tests/ai-client.test.js dist/tests/ai-message-context.test.js dist/tests/http-interactions.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "Bot de IA do DevHub 404 para Discord",
+  "dependencies": {
+    "discord.js": "14.27.0",
+    "dotenv": "^17.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3",
+    "wrangler": "^4.125.0"
+  }
+}

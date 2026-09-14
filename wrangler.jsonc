@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "devhub-404-bot",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-09-14",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "ai": {
+    "binding": "AI"
+  },
+  "vars": {
+    "CLIENT_ID": "replace-with-discord-application-id",
+    "GUILD_ID": "replace-with-discord-guild-id",
+    "CLOUDFLARE_AI_MODEL": "@cf/qwen/qwen3.8-27b",
+    "AI_REASONING_EFFORT": "none",
+    "AI_MAX_COMPLETION_TOKENS": "512",
+    "AI_TIMEOUT_MS": "30000"
+  },
+  "secrets": {
+    "required": ["DISCORD_PUBLIC_KEY"]
+  }
+}
